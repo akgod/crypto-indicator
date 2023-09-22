@@ -1,18 +1,12 @@
+# 中文
 运行提醒：
 安装redis数据库。
 获取相关加密货币的K线数据存到redis中。
 通过K线数据计算4h /1d的上述技术指标买卖点
 node 对应技术指标的js文件即可
 其中const data = JSON.parse(fs.readFileSync('****.json', 'utf-8'));可以换成你想要计算的交易对的json文件
-Reminder to Run:
-Install the Redis database.
-Retrieve K-line data for relevant cryptocurrencies and store it in Redis.
-Calculate technical indicators for 4-hour (4h) and 1-day (1d) timeframes based on the K-line data.
-Execute the corresponding JavaScript file for the technical indicators using Node.js.
-You can replace `const data = JSON.parse(fs.readFileSync('****.json', 'utf-8'));` with the JSON file for the trading pair you want to calculate.
 
-Please note that you'll need to replace '****.json' with the actual filename and path of the JSON file containing the trading data you want to use.
-# 中文
+
 加密货币每种技术指标都有经典的买卖点，计算并筛选出八大主流技术指标(如MACD、MA、KDJ、EMA、CCI、OBV、RSI、TD)符合买卖点要求的交易对。
 1 MACD指标是由两线一柱组合起来形成，快速线为DIF，慢速线为DEA。MACD金叉，DIF由下向上突破 DEA，为买入信号；MACD死叉，DIF由上向下突破 DEA，为卖出信号。快线DIF由下穿破0轴，为买入信号；快线DIF由上而下穿破0轴，为卖出信号。
 2 MA（Moving Average，移动平均线）用于平滑价格数据以识别趋势。MA 是通过计算给定周期内价格的平均值来计算的。当短周期的 MA 上穿过长周期的 MA 时，这可能是一个买入信号(5_10金叉，10_30金叉)，表示市场趋势可能从下跌转为上升。相反，当短周期的 MA 下穿过长周期的 MA 时，这可能是一个卖出信号（5_10死叉，10_30死叉），表示市场趋势可能从上升转为下跌。有时交易者会使用多条不同周期的 MA。例如，可以使用 5 日、10 日和 30 日的 MA。当MA5 >MA10>MA30，多头排列（5_10_30多头排列），市场可能处于强烈上升趋势。5_10_30空头排列同理。
@@ -24,6 +18,14 @@ Please note that you'll need to replace '****.json' with the actual filename and
 8 汤姆·德马克（Tom DeMark）指数旨在确定资产价格趋势疲劳和可能的反转点。在一个上涨趋势中，当今天的收盘价低于四天前的收盘价时，计算一个购买设定。如果该条件连续满足 9 天，形成一个完整的购买设定。当形成一个完整的九天买入设定时，可能表明趋势即将反转，市场即将出现反弹。此时可以考虑买入。。在一个下跌趋势中，当今天的收盘价高于四天前的收盘价时，计算一个售出设定。如果该条件连续满足 9 天，形成一个完整的售出设定。当形成一个完整的九天卖出设定时，可能表明趋势即将反转，市场即将出现回落。此时可以考虑卖出。
 
 # English
+Reminder to Run:
+Install the Redis database.
+Retrieve K-line data for relevant cryptocurrencies and store it in Redis.
+Calculate technical indicators for 4-hour (4h) and 1-day (1d) timeframes based on the K-line data.
+Execute the corresponding JavaScript file for the technical indicators using Node.js.
+You can replace `const data = JSON.parse(fs.readFileSync('****.json', 'utf-8'));` with the JSON file for the trading pair you want to calculate.
+
+Please note that you'll need to replace '****.json' with the actual filename and path of the JSON file containing the trading data you want to use.
 Each technical indicator has its classic buy and sell points. We filter all trading pairs that meet the criteria of the top eight mainstream technical indicators (MACD, MA, KDJ, EMA, CCI, OBV, RSI, TD)
 1 The MACD indicator consists of two lines and a histogram. The fast line is called the DIF, and the slow line is called the DEA. When the DIF crosses above the DEA from below, it generates a bullish signal known as a MACD bullish crossover,indicating a buy signal. Conversely, when the DIF crosses below the DEA from above, it generates a bearish signal known as a MACD bearish crossover,indicating a sell signal. Additionally, when the DIF crosses below the zero axis, it generates a buy signal, and when the DIF crosses above the zero axis, it generates a sell signal.
 2 The Moving Average (MA) is used to smooth price data and identify trends. It is calculated by averaging the prices over a given period. When a shorter-term MA crosses above a longer-term MA, it may generate a buy signal (such as a 5_10 golden cross or a 10_30 golden cross), indicating a potential shift from a downtrend to an uptrend in the market. Conversely, when a shorter-term MA crosses below a longer-term MA, it may generate a sell signal (such as a 5_10 death cross or a 10_30 death cross), indicating a potential shift from an uptrend to a downtrend. Traders sometimes use multiple MA lines with different periods. For example, they may use 5-day, 10-day, and 30-day MAs. When MA5 > MA10 > MA30, it is called a bullish alignment (5_10_30 bullish alignment), suggesting a strong upward trend in the market. The same principle applies to bearish alignments in a 5_10_30 bearish alignment.
