@@ -16,8 +16,7 @@
 const redis = require("redis");
 //const url = `redis://${process.env.redisHost}:${process.env.redisPort}`;
 const url = `redis://127.0.0.1:6379`;
-const client = redis.createClient({ url , password:"******"}); //172.31.212.116  47.243.20.227
-//const client = redis.createClient({ host: "172.31.212.131", port: 6379 , password:"marskiller"}); //172.31.212.116  47.243.20.227
+const client = redis.createClient({ url , password:"******"}); 
 global.sleep = async (timeout) => {
     return new Promise((res, rej) =>
       setTimeout(() => {
